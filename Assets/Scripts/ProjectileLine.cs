@@ -41,7 +41,7 @@ public class ProjectileLine : MonoBehaviour
     {
         Vector3 pt = _poi.transform.position;
         if (points.Count > 0 && (pt - lastPoint).magnitude < minDist) return;
-
+        
         if(points.Count == 0)
         {
             Vector3 launchPos = Slingshot.S.launchPoint.transform.position;
@@ -146,10 +146,10 @@ public class ProjectileLine : MonoBehaviour
                 else return;
             }
             else return;
-
-            AddPoint();
-            if (poi.GetComponent<Rigidbody>().IsSleeping()) poi = null;
         }
+
+        AddPoint();
+        if (poi.GetComponent<Rigidbody>().IsSleeping()) poi = null;
     }
     // Update is called every frame, if the MonoBehaviour is enabled.
     void Update()
